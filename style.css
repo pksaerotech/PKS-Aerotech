@@ -1,0 +1,610 @@
+/* ==========================================
+   PKS Aerotech Website
+   Version 2.0
+========================================== */
+
+:root{
+
+    --primary:#00A8FF;
+    --secondary:#66D9FF;
+    --background:#08182F;
+    --card:#10274D;
+    --white:#FFFFFF;
+    --text:#DCE8F5;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+    color:var(--white);
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+
+}
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:10px 5%;
+
+    background:rgba(8,24,47,0.45);
+
+    backdrop-filter:blur(8px);
+
+    transition:.4s;
+
+}
+
+.logo img{
+
+    height:90px;
+
+}
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.nav-links{
+
+    display:flex;
+    list-style:none;
+    gap:50px;
+
+}
+
+.nav-links a{
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    font-size:13px;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    position:relative;
+
+    height:110vh;
+
+    padding-top:80px;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    text-align:left;
+
+    overflow:hidden;
+
+}
+
+.hero-video{
+    animation:slowZoom 20s linear infinite alternate;
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-position:60% center;
+
+    z-index:-2;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:none;
+
+}
+
+.hero-content{
+
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin-left: 0.1dvb;
+
+    text-align: left;
+
+    background: none;
+
+    padding: 40px;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    animation: fadeUp 1s ease;
+
+}
+
+.hero-content h3{
+
+    color:var(--secondary);
+
+    letter-spacing:5px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content h1{
+
+    font-size:75px;
+
+    line-height:0.95;
+    margin-bottom:10px;
+
+    text-shadow:0 10px 35px rgba(0,0,0,.45);
+
+}
+
+.hero-content h1 span{
+
+    color:var(--primary);
+
+    text-shadow:0 0 30px rgba(0,168,255,.45);
+
+}
+
+.hero-content h2{
+
+    font-size:28px;
+    letter-spacing:1px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.hero-description{
+
+    width:100%;
+
+    margin:0;
+
+    margin-top:25px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:var(--text);
+
+    max-width:560px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.btn-primary,
+
+.btn-secondary{
+
+    padding:15px 34px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,168,255,.45);
+
+}
+
+.btn-secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:#08182F;
+
+}
+
+/* ===========================
+   SCROLL INDICATOR
+=========================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:25px;
+
+    right: 100px;
+
+    left:none;
+
+    transform:none;
+
+    z-index:3;
+
+    text-align:center;
+
+    animation:bounce 2s infinite;
+
+}
+
+.scroll-indicator span{
+
+    display:block;
+
+    width:22px;
+
+    height:22px;
+
+    margin:auto;
+
+    border-left:2px solid white;
+
+    border-bottom:2px solid white;
+
+    transform:rotate(-45deg);
+
+}
+
+.scroll-indicator p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   PLACEHOLDER SECTIONS
+=========================== */
+
+.placeholder-section{
+
+    min-height:70vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 8%;
+
+}
+
+.container{
+
+    max-width:1100px;
+
+    text-align:center;
+
+}
+
+.container h2{
+
+    font-size:48px;
+
+    margin-bottom:25px;
+
+    color:var(--primary);
+
+}
+
+.container p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:var(--text);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#051321;
+
+    padding:25px;
+
+    text-align:center;
+
+    color:#b8c7d8;
+
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    40%{
+
+        transform:translate(-50%,-12px);
+
+    }
+
+    60%{
+
+        transform:translate(-50%,-6px);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .navbar{
+
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        padding:12px 80px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background:rgba(7,27,52,.88);
+        backdrop-filter:blur(12px);
+        z-index:1000;
+
+    }
+
+    .nav-links{
+
+        margin-top:20px;
+
+        gap:20px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .logo img{
+
+        height:100px;
+        transition:.3s ease;
+
+    }
+
+    .hero-content h1{
+
+        font-size:58px;
+
+    }
+
+    .hero-content h2{
+
+        font-size:26px;
+
+    }
+
+    .hero-description{
+
+        width:95%;
+
+        font-size:18px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero-content h1{
+
+        font-size:42px;
+
+    }
+
+    .hero-content h2{
+
+        font-size:20px;
+
+    }
+
+    .hero-content h3{
+
+        font-size:14px;
+
+        letter-spacing:3px;
+
+    }
+
+    .hero-description{
+
+        width:100%;
+        max-width:650px;
+
+        margin:0;
+
+        font-size:20px;
+
+        line-height:1.7;
+
+        color:var(--text);
+
+    }
+
+    .hero-buttons{
+
+        justify-content:flex-start;
+    }
+
+    .btn-primary,
+
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+}
